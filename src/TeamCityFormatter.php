@@ -5,7 +5,7 @@ use Behat\Behat\EventDispatcher\Event\AfterStepTested;
 use Behat\Behat\EventDispatcher\Event\BeforeFeatureTested;
 use Behat\Behat\EventDispatcher\Event\AfterFeatureTested;
 use Behat\Behat\EventDispatcher\Event\BeforeScenarioTested;
-use Behat\Behat\Output\Printer\ConsoleOutputPrinter;
+use Behat\Behat\Output\Printer\ConsoleOutputFactory;
 use Behat\Behat\Tester\Result\ExecutedStepResult;
 use Behat\Testwork\Output\Formatter;
 use Behat\Testwork\Output\Printer\OutputPrinter;
@@ -76,7 +76,7 @@ class TeamCityFormatter implements Formatter
      */
     public function getOutputPrinter()
     {
-        return new ConsoleOutputPrinter();
+        return new ConsoleOutputFactory();
     }
 
     /**
