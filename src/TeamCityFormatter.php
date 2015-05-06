@@ -162,7 +162,7 @@ class TeamCityFormatter implements Formatter
     {
         $message = "##teamcity[$eventName";
         foreach ($params as $key => $value) {
-            $message .= " $key='".str_replace("'", "\"", $value)."'";
+            $message .= " $key='".str_replace("'", "|'", $value)."'";
         }
         $message .= "]\n";
 
