@@ -162,13 +162,13 @@ class TeamCityFormatter implements Formatter
     {
         $message = "##teamcity[$eventName";
         foreach ($params as $key => $value) {
-            $escapedValue = str_replace("|", "||", $value
-            $escapedValue = str_replace("'", "|'", $value);
-            $escapedValue = str_replace("\n", "|n", $value);
-            $escapedValue = str_replace("\r", "|r", $value);
-            $escapedValue = str_replace("\uNNNN", "|0xNNNN", $value); 
-            $escapedValue = str_replace("[", "|[", $value); 
-            $escapedValue = str_replace("]", "|]", $value); 
+            $escapedValue = str_replace("|", "||", $value);
+            $escapedValue = str_replace("'", "|'", $escapedValue);
+            $escapedValue = str_replace("\n", "|n", $escapedValue);
+            $escapedValue = str_replace("\r", "|r", $escapedValue);
+            $escapedValue = str_replace("\uNNNN", "|0xNNNN", $escapedValue); 
+            $escapedValue = str_replace("[", "|[", $escapedValue); 
+            $escapedValue = str_replace("]", "|]", $escapedValue); 
             $message .= " $key='".$escapedValue."'";
         }
         $message .= "]\n";
